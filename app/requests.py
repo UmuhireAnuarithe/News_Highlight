@@ -79,9 +79,9 @@ def get_articles(id):
         article_list =[]
 
     if article_details_response['news']:
-        for new_article in new_details_response['articles']:
+        for new_article in new_details_response['news']:
           
-            Title = new_article.get('title')
+            Title = new_article.get('Title')
             Author=new_article.get('Author')
             Description=new_article.get('Description')
             url=new_article.get('url')
@@ -93,3 +93,17 @@ def get_articles(id):
             article_list.append(new_object)
 
     return article_list
+
+     
+def search_article(new_name):
+    search_new_url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-01-18&sortBy=publishedAt&apiKey=870c6f91cc3244ac9013dcbecb84e54d?api_key={}&query={}'.format(api_key,new_id)
+    with urllib.request.urlopen(search_new_url) as url:
+        search_new_data = url.read()
+        search_new_response = json.loads(search_new_data)
+        search_new_articles = None
+
+    if search_new_response['news']:
+        search_new_list = search_new_response['news']
+        search_new_articles = process_articles(search_new_list)
+    
+    return search_new_articles
