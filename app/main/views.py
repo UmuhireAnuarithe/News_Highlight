@@ -7,8 +7,8 @@ from ..models import Review
 
 @main.route('/')
 def index():
-   '''
-     View news page function that returns the  news details page and its data
+    '''
+    View news page function that returns the  news details page and its data
     '''
 
     Hot_news = get_sources('popular')

@@ -14,10 +14,10 @@ class News_source:
 
 
 class  News_Article  :
-        '''
-        News_Article class to define  News_article  Objects
-        '''
-    def __init__(self, id, name, Author, Title, description, url, urlToImage, publishedOn):
+    '''
+    News_Article class to define  News_article  Objects
+    '''
+    def __init__(self, id, Name, Author, Title, description, url, urlToImage, publishedOn):
         self.id = id
         self.Name = Name
         self.Author = Author

@@ -1,9 +1,9 @@
 import os
 
 class Config:
-'''
-genreral configuration
-'''
+    '''
+    genreral configuration for  parent  class
+    '''
 
 NEWS_API_BASE_URL ='https://newsapi.org/v2/everything?sources={}&apiKey={}'   
 NEWS_API_KEY = os.environ.get('313d115015d7470998e44f7c461d1ada')
