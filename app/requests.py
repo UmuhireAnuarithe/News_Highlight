@@ -3,16 +3,21 @@ from .models import News_Article,News_source,Review
 
 
 
+
+
 # Getting api key
 api_key = None
 # Getting the news base url
-base_url = None
+base_news_url = None
+base_source_url  = None
+
+
 
 def configure_request(app):
-    global api_key,base_url
-    api_key = app.config['NEWS_API_KEY']
-    base_url = app.config['NEWS_API_BASE_URL']
-
+    global api_key,base_news_url,base_source_url
+    api_key=app.config['NEW_API_KEY']
+    base_news_url  = app.config['NEWS_API_BASE_URL']
+    News_source_url = app.config['NEWS_SOURCES_BASE_URL']
 
 def get_sources(category):
     '''
@@ -42,10 +47,8 @@ def get_sources(category):
 def process_sources(source_list):
     '''
     Function  that processes the source articles result and transform them to a list of Objects
-
     Args:
         source_list: A list of dictionaries that contain articals details
-
     Returns :
         source_articles: A list of source objects
     '''
@@ -107,3 +110,4 @@ def search_article(new_name):
         search_new_articles = process_articles(search_new_list)
     
     return search_new_articles
+
