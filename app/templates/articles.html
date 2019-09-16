@@ -15,12 +15,12 @@
 
     <body>
         {% block content %}
-        <h1 style="text-align:center"> ARTICLES </h1>
+        <h1 style="text-align:center;color:chocolate;"> ARTICLES </h1>
         <div class="col-md-3"></div>
         <div class="col-md-6" style="text-align:center"></div>
         <ul>
             {% for article in articles %}
-                <li style="list-style-type:none; font: size 24px; text-align:center"><h3> {{ article.title}} </h3></li>
+                <li style="list-style-type:none; font: size 24px; text-align:center;color:darkcyan;"><h3> {{ article.title}} </h3></li>
                 <li style="list-style-type:none"><p> {{ article.description }} </p></li>
                 <li style="list-style-type:none; text-align:center"><img src="{{article.urlToImage}}" alt="Image"> </li>
                 <li style="list-style-type:none; text-align:center"><p> {{ article.publishedAt }} by {{ article.author }} </p></li>
