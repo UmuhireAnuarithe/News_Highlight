@@ -28,32 +28,3 @@ def articles(articles_id):
 
 
 
-
-
-# @main.route('/')
-# def index():
-#     '''
-#     View news page function that returns the  news details page and its data
-#     '''
-
-#     popular_news = get_source()
-#     Title = 'Home - Welcome to resourceful news Online Website '
-#     return render_template('index.html', Title = Title,popular = popular_news)
-    
-    
-# @main.route('/search/<article_Name>')
-# def search(article_Name):
-#         article_Name_list = article_Name.split(" ")
-#         article_Name_format = "+".join(article_Name_list)
-#         searched_news = search_new(article_Name_format)
-#         title = f'search articles" for {article_Name}'
-#         return render_template('search.html',news = searched_news)
-
-
-# @main.route('/article/<id>')
-# def new_review(id):
-#         news= get_articles(id)
-        
-
-#         title = 'Article'
-#         return render_template('news.html',title = title, news=news)

@@ -11,16 +11,22 @@
 {% block content %}
 
     <body>
+        <div class="container">
+            
         <h1 style="text-align:center"> NEWS SOURCES </h1>
+        <div class="card">
         <ul>
             {% for news_source in sources %}
                 <li style="list-style-type:none; font: size 24px;"><h3> <a href="{{ news_source.url}}">{{ news_source.name}}</a> </h3></li>
                 <li style="list-style-type:none"><p> {{ news_source.description }} </p></li>
-                <a href="/articles/{{ news_source.id }}" class="btn btn-primary">Click Here To Read Articles</a>
+                <a href="/articles/{{ news_source.id }}" class="btn btn-primary">View Articles</a>
                 
                 <hr> 
             {% endfor %}
         </ul>
+
+    </div>
+    </div>
     </body>
 
 {% endblock %}
