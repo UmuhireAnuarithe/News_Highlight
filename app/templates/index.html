@@ -1,30 +1,26 @@
-<div class="container" style="background-color:slategrey">
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
-    <!-- Content block -->
-    {% extends 'base.html'%}
-    {% import 'macros.html' as macro%}
-    
-    <!-- Styles block -->
-    {% block styles%}
-        {{ super() }}
-        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    {% endblock %}
-    
-    
-        <!-- Content block -->
-    {% block content %}
-    
-    
-    
-    
-    
-    <h3 style="color:chocolate; text-align: center"> General News</h3>
-    <hr>
-    <ul>
-        {{ macro.displayNewsList(popular)}}
-    </ul>
-    
-</div>
+<!-- Styles block -->
 
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
 
-{% endblock%}
+{% block content %}
+
+    <body>
+        <h1 style="text-align:center"> NEWS SOURCES </h1>
+        <ul>
+            {% for news_source in sources %}
+                <li style="list-style-type:none; font: size 24px;"><h3> <a href="{{ news_source.url}}">{{ news_source.name}}</a> </h3></li>
+                <li style="list-style-type:none"><p> {{ news_source.description }} </p></li>
+                <a href="/articles/{{ news_source.id }}" class="btn btn-primary">Click Here To Read Articles</a>
+                
+                <hr> 
+            {% endfor %}
+        </ul>
+    </body>
+
+{% endblock %}
