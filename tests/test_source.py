@@ -1,22 +1,22 @@
+
 import unittest
+from app.models import Source
 
 
-from  app import app
-from app.models import News_source
 
-class NTest(unittest.TestCase):
+class SourceTest(unittest.TestCase):
     '''
-    Test Class to test the behaviour of the News_source class
+    Test Class to test the behaviour of the Source class.
     '''
 
     def setUp(self):
         '''
-        Set up method that will run before every Test
+        Set up method that will run before every Test.
         '''
-        self.new_source = News_source(12345,'Modern business','http//worldbbussiness/com','Digital based commerce','pa','gekohwgoeg','hit 100k users on their trading')
+        self.new_source = Source('national-geographic','National Geographic','eporting our world daily','http://news.nationalgeographic.com','science')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_source,News_source))
+        self.assertTrue(isinstance(self.new_source,Source))
 
-if __name__=='__main__':
-    unittest.main()
+    def test_instance_correct(self):
+        self.assertEqual(self.new_source.name,'National Geographic')
